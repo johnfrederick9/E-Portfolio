@@ -1,16 +1,131 @@
- :root {
-            --primary-color: #7DCE82;
-            --secondary-color: #72a83b;
-            --text-color: #333;
-            --light-gray: #f5f5f5;
-            --medium-gray: #e0e0e0;
-            --dark-gray: #767676;
-            --white: #fff;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --border-color: #ddd;
-            --label-bg: #D7F5DC;
-        }
+:root {
+        /* Original light theme colors */
+        --primary-color: #7DCE82;
+        --secondary-color: #72a83b;
+        --text-color: #333;
+        --light-gray: #f5f5f5;
+        --medium-gray: #e0e0e0;
+        --dark-gray: #767676;
+        --white: #fff;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        --border-color: #ddd;
+        --label-bg: #D7F5DC;
+        
+        /* Background colors */
+        --background-color: #fff;
+        --card-bg: #fff;
+    }
 
+    /* Dark theme colors */
+    [data-theme="dark"] {
+        --primary-color: #67B06B;
+        --secondary-color: #5A8C2F;
+        --text-color: #f0f0f0;
+        --light-gray: #222;
+        --medium-gray: #444;
+        --dark-gray: #aaa;
+        --white: #222;
+        --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        --border-color: #444;
+        --label-bg: #345738;
+        
+        /* Background colors */
+        --background-color: #121212;
+        --card-bg: #1e1e1e;
+    }
+
+    /* Apply background colors to elements */
+    body {
+        background-color: var(--light-gray);
+        color: var(--text-color);
+    }
+
+    .profile-container, .section, .service-card, .project-card, footer, 
+    .contact-left {
+        background-color: var(--card-bg);
+    }
+
+    .contact-right {
+        background-color: var(--light-gray);
+    }
+    
+    /* Add transition for smooth theme change */
+    body, .profile-container, .section, .service-card, .project-card,
+    .contact-left, .contact-right, .form-control, .social-icon, 
+    .portfolio-container, footer, .info-label, .info-value, 
+    h1, h2, h3, p, span, a, .service-description, .project-title {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    /* Additional dark mode adjustments */
+    [data-theme="dark"] .profile-pic img {
+        border: 3px solid var(--primary-color);
+    }
+
+    [data-theme="dark"] .regular {
+        color: 3px solid var(--primary-color);
+    }
+
+    [data-theme="dark"] h1, h2, h3, p, span, a {
+        color: 3px solid var(--primary-color);
+    }
+
+    [data-theme="dark"] .info-label {
+        background-color: var(--label-bg);
+        color: var(--dark-gray);
+    }
+    [data-theme="dark"] .section-heading{
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .contact-info-title{
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .contact-info-content{
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .github {
+        color: var(--text-color);
+    }
+
+    [data-theme="dark"] .form-control {
+        background-color: var(--medium-gray);
+        border-color: var(--border-color);
+        color: var(--text-color);
+    }
+    /* Theme toggle button styles */
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        border: none;
+        font-size: 20px;
+    }
+
+    .theme-toggle:hover {
+        transform: scale(1.05);
+    }
+
+    .theme-toggle i {
+        transition: transform 0.3s ease;
+    }
+
+    .theme-toggle:hover i {
+        transform: rotate(30deg);
+    }
         * {
             margin: 0;
             padding: 0;
@@ -545,10 +660,8 @@
         .portfolio-container {
             max-width: 900px;
             width: 900px;
-            background-color: white;
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -700,15 +813,6 @@
             padding: 40px;
             min-width: 300px; /* Minimum width to prevent squishing */
         }
-
-        .contact-left {
-            background-color: white;
-        }
-
-        .contact-right {
-            background-color: #f5f5f5; /* Lighter gray to match image */
-        }
-
         /* Section headings */
         .section-heading {
             margin-bottom: 30px;
@@ -854,166 +958,166 @@
                 color: var(--dark-gray);
             }
             /* Container adjustments */
-.container {
-    max-width: 2000px;
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 15px;
-}
+            .container {
+                max-width: 2000px;
+                margin: 20px auto;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 15px;
+            }
 
-@media (min-width: 901px) {
-    .container {
-        grid-template-columns: 400px 1fr;
-        margin: 40px auto;
-        padding: 20px;
-        gap: 30px;
-    }
-}
+            @media (min-width: 901px) {
+                .container {
+                    grid-template-columns: 400px 1fr;
+                    margin: 40px auto;
+                    padding: 20px;
+                    gap: 30px;
+                }
+            }
 
-/* Better mobile layout adjustments */
-@media (max-width: 900px) {
-    .profile-container {
-        margin-bottom: 20px;
-    }
-    
-    .services-grid,
-    .projects-grid,
-    .skills-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 15px;
-    }
-}
+            /* Better mobile layout adjustments */
+            @media (max-width: 900px) {
+                .profile-container {
+                    margin-bottom: 20px;
+                }
+                
+                .services-grid,
+                .projects-grid,
+                .skills-container {
+                    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                    gap: 15px;
+                }
+            }
 
-/* Small mobile devices */
-@media (max-width: 480px) {
-    .services-grid,
-    .projects-grid,
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .section {
-        padding: 15px;
-    }
-    
-    .contact-form {
-        grid-template-columns: 1fr;
-    }
-    
-    .form-group.full-width {
-        grid-column: span 1;
-    }
-}
+            /* Small mobile devices */
+            @media (max-width: 480px) {
+                .services-grid,
+                .projects-grid,
+                .skills-container {
+                    grid-template-columns: 1fr;
+                }
+                
+                .section {
+                    padding: 15px;
+                }
+                
+                .contact-form {
+                    grid-template-columns: 1fr;
+                }
+                
+                .form-group.full-width {
+                    grid-column: span 1;
+                }
+            }
 
-/* Portfolio container responsiveness */
-.portfolio-container {
-    max-width: 100%;
-    width: auto;
-    padding: 20px;
-}
+            /* Portfolio container responsiveness */
+            .portfolio-container {
+                max-width: 100%;
+                width: auto;
+                padding: 20px;
+            }
 
-@media (min-width: 901px) {
-    .portfolio-container {
-        max-width: 900px;
-        width: 900px;
-        padding: 40px;
-    }
-}
+            @media (min-width: 901px) {
+                .portfolio-container {
+                    max-width: 900px;
+                    width: 900px;
+                    padding: 40px;
+                }
+            }
 
-/* Contact container responsiveness */
-.contact-container {
-    flex-direction: column;
-}
+            /* Contact container responsiveness */
+            .contact-container {
+                flex-direction: column;
+            }
 
-@media (min-width: 769px) {
-    .contact-container {
-        flex-direction: row;
-    }
-}
+            @media (min-width: 769px) {
+                .contact-container {
+                    flex-direction: row;
+                }
+            }
 
-.contact-left, .contact-right {
-    width: 100%;
-    padding: 20px;
-}
+            .contact-left, .contact-right {
+                width: 100%;
+                padding: 20px;
+            }
 
-@media (min-width: 769px) {
-    .contact-left, .contact-right {
-        flex: 1;
-        padding: 40px;
-    }
-}
+            @media (min-width: 769px) {
+                .contact-left, .contact-right {
+                    flex: 1;
+                    padding: 40px;
+                }
+            }
 
-/* Text adjustments for mobile */
-.lorem-text {
-    max-width: 100%;
-}
+            /* Text adjustments for mobile */
+            .lorem-text {
+                max-width: 100%;
+            }
 
-@media (min-width: 769px) {
-    .lorem-text {
-        max-width: 80%;
-    }
-}
+            @media (min-width: 769px) {
+                .lorem-text {
+                    max-width: 80%;
+                }
+            }
 
-/* Buttons responsiveness */
-.buttons {
-    flex-direction: column;
-    gap: 10px;
-}
+            /* Buttons responsiveness */
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
 
-@media (min-width: 480px) {
-    .buttons {
-        flex-direction: row;
-        gap: 15px;
-    }
-}
+            @media (min-width: 480px) {
+                .buttons {
+                    flex-direction: row;
+                    gap: 15px;
+                }
+            }
 
-/* Improve font size responsiveness */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-    
-    .section-title {
-        font-size: 18px;
-    }
-    
-    .profile-name {
-        font-size: 18px;
-    }
-    
-    .section-heading {
-        font-size: 20px;
-    }
-}
+            /* Improve font size responsiveness */
+            @media (max-width: 480px) {
+                h1 {
+                    font-size: 24px;
+                }
+                
+                .section-title {
+                    font-size: 18px;
+                }
+                
+                .profile-name {
+                    font-size: 18px;
+                }
+                
+                .section-heading {
+                    font-size: 20px;
+                }
+            }
 
-/* Fix for profile picture on small screens */
-@media (max-width: 480px) {
-    .profile-pic img {
-        width: 100px;
-        height: 100px;
-    }
-}
+            /* Fix for profile picture on small screens */
+            @media (max-width: 480px) {
+                .profile-pic img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
 
-/* Image responsiveness */
-img {
-    max-width: 100%;
-    height: auto;
-}
+            /* Image responsiveness */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
 
-/* Fix contact media query from original CSS */
-@media (max-width: 768px) {
-    #contact {
-        flex-direction: column;
-    }
-    
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .contact-left, .contact-right {
-        width: 100%;
-        padding: 20px;
-    }
-}
+            /* Fix contact media query from original CSS */
+            @media (max-width: 768px) {
+                #contact {
+                    flex-direction: column;
+                }
+                
+                .contact-container {
+                    flex-direction: column;
+                }
+                
+                .contact-left, .contact-right {
+                    width: 100%;
+                    padding: 20px;
+                }
+            }
