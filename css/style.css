@@ -853,3 +853,167 @@
                 font-size: 14px;
                 color: var(--dark-gray);
             }
+            /* Container adjustments */
+.container {
+    max-width: 2000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+}
+
+@media (min-width: 901px) {
+    .container {
+        grid-template-columns: 400px 1fr;
+        margin: 40px auto;
+        padding: 20px;
+        gap: 30px;
+    }
+}
+
+/* Better mobile layout adjustments */
+@media (max-width: 900px) {
+    .profile-container {
+        margin-bottom: 20px;
+    }
+    
+    .services-grid,
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .services-grid,
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section {
+        padding: 15px;
+    }
+    
+    .contact-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+}
+
+/* Portfolio container responsiveness */
+.portfolio-container {
+    max-width: 100%;
+    width: auto;
+    padding: 20px;
+}
+
+@media (min-width: 901px) {
+    .portfolio-container {
+        max-width: 900px;
+        width: 900px;
+        padding: 40px;
+    }
+}
+
+/* Contact container responsiveness */
+.contact-container {
+    flex-direction: column;
+}
+
+@media (min-width: 769px) {
+    .contact-container {
+        flex-direction: row;
+    }
+}
+
+.contact-left, .contact-right {
+    width: 100%;
+    padding: 20px;
+}
+
+@media (min-width: 769px) {
+    .contact-left, .contact-right {
+        flex: 1;
+        padding: 40px;
+    }
+}
+
+/* Text adjustments for mobile */
+.lorem-text {
+    max-width: 100%;
+}
+
+@media (min-width: 769px) {
+    .lorem-text {
+        max-width: 80%;
+    }
+}
+
+/* Buttons responsiveness */
+.buttons {
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (min-width: 480px) {
+    .buttons {
+        flex-direction: row;
+        gap: 15px;
+    }
+}
+
+/* Improve font size responsiveness */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .profile-name {
+        font-size: 18px;
+    }
+    
+    .section-heading {
+        font-size: 20px;
+    }
+}
+
+/* Fix for profile picture on small screens */
+@media (max-width: 480px) {
+    .profile-pic img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Image responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fix contact media query from original CSS */
+@media (max-width: 768px) {
+    #contact {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-left, .contact-right {
+        width: 100%;
+        padding: 20px;
+    }
+}
