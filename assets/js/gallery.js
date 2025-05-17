@@ -1,5 +1,7 @@
 $(window).on("load", function() {
-    $('body').addClass('loaded');
+    setTimeout(function() {
+        $('body').addClass('loaded');
+    }, 1000); // 3 seconds delay
 });
 
 $(function(){

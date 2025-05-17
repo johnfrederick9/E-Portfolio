@@ -5,22 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Portfolio Template</title>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">  <!-- https://fontawesome.com/-->  
-    <link rel="stylesheet" href="css/magnific-popup.css">       <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
-    <link rel="stylesheet" href="css/tooplate-vertex.css">
-    <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">  <!-- https://fontawesome.com/-->  
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">       <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
+    <link rel="stylesheet" href="assets/css/tooplate-vertex.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Firebase SDKs -->
+    <!-- Using updated imports for Firebase v10.x -->
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics-compat.js"></script>
+
+    <!-- Firebase Configuration and Initialization -->
+    <script>
+        // Your Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyD4mVAuimOfv4jpifYjvqwtK6jIat70AyU",
+            authDomain: "portfolio-12964.firebaseapp.com",
+            projectId: "portfolio-12964",
+            storageBucket: "portfolio-12964.firebasestorage.app",
+            messagingSenderId: "576068685264",
+            appId: "1:576068685264:web:e0a8395a6d18eb06defdd5",
+            measurementId: "G-XHW4RD5Z8H"
+        };
+
+        // Initialize Firebase with compat version
+        firebase.initializeApp(firebaseConfig);
+        
+        // Initialize services
+        const db = firebase.firestore();
+        const analytics = firebase.analytics();
+    </script>
 </head>
 <body>
     <!-- Page Loader -->
     <div id="loader-wrapper">
-
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
-
     </div>
-</head>
-<body>
+
     <!-- Page Loader -->
     <div id="page-loader">
         <div class="loader"></div>
@@ -30,11 +53,15 @@
         <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">
         <i class="fas fa-moon"></i>
         </button>
+        <!-- Admin button (add this right after your theme toggle button) -->
+        <!-- <button class="admin-button" id="adminButton" title="Admin Panel">
+            <i class="fas fa-user-cog"></i>
+        </button> -->
         <!-- Profile Section -->
         <div class="profile-container">
             <div class="profile-header">
                 <div class="profile-pic">
-                    <img src="img/profile.jpg" alt="John Frederick Gelay">
+                    <img src="assets/img/profile.jpg" alt="John Frederick Gelay">
                 </div>
                 <h1 class="profile-name">John Frederick Gelay</h1>
                 <p class="profile-title">Front-End Developer</p>
@@ -85,16 +112,6 @@
                             <span>English</span>
                         </div>
                     </div>
-              
-                <!-- <div class="language-item">
-                        <div class="language-info">
-                            <span>English</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="language-bar">
-                            <div class="language-progress" style="width: 80%"></div> 
-                        </div>
-                    </div>-->
                 </div>
                 
                 <!-- Skills Section -->
@@ -113,20 +130,6 @@
                             communication and seamless integration into dynamic work 
                             environments.</h4></span>
                         </div>
-                        <!-- <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>CSS</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>-->
                     </div>
                 </div>
                 
@@ -135,13 +138,13 @@
                     <h3 class="section-subtitle">Extra Skills</h3>
                     
                     <ul class="extra-skills-list">
-                        <li class="extra-skill-item">
+                        <!-- <li class="extra-skill-item">
                             <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
                             <span class="extra-skill-text">Bootstrap, Materialize</span>
-                        </li>
+                        </li> -->
                         <li class="extra-skill-item">
                             <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
-                            <span class="extra-skill-text">GIT Knowledge</span>
+                            <span class="extra-skill-text">Basic GIT Knowledge</span>
                         </li>
                     </ul>
                 </div>
@@ -173,7 +176,7 @@
         
         <div class="buttons">
             <a href="#contact" class="btn btn-primary">Contact Me →</a>
-            <a href="#download" class="btn btn-secondary">
+            <a href="#" id="downloadCV" class="btn btn-secondary">
                 DOWNLOAD CV
                 <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -234,7 +237,7 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="img/MBIS.jpg" alt="Project 1">
+                            <img src="assets/img/MBIS.jpg" alt="Project 1">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Barangay Mantalongon Information System</h3>
@@ -262,7 +265,7 @@
                     </div>
                     <div class="project-card">
                         <div class="project-img">
-                            <img src="img/SIA.png" alt="Project 2">
+                            <img src="assets/img/SIA.png" alt="Project 2">
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">SIA_PPROJECT </h3>
@@ -297,22 +300,23 @@
                 <div class="contact-container">
                     <div class="contact-left">
                         <h2 class="section-heading">Leave Us Your Info</h2>
-                        <form class="contact-form">
+                        <form id="contactForm" class="contact-form">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Your Full Name ( Required )" required>
+                                <input type="text" id="name" class="form-control" placeholder="Your Full Name ( Required )">
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Your Email ( Required )" required>
+                                <input type="email" id="email" class="form-control" placeholder="Your Email ( Required )" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" id="subject" class="form-control" placeholder="Subject">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="Your Message" required></textarea>
+                                <textarea id="message" class="form-control" placeholder="Your Message"></textarea>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="submit-btn">SEND MESSAGE</button>
                             </div>
+                            <p id="formStatus"></p>
                         </form>
                     </div>
                     
@@ -343,11 +347,11 @@
                             </div>
                             <div class="contact-info-row">
                                 <div class="contact-info-title">Github:</div>
-                                <div class="contact-info-content"></div>
+                                <div class="contact-info-content">github.com/johnfrederick9</div>
                             </div>
                             <div class="contact-info-row">
                                 <div class="contact-info-title">Linkedin:</div>
-                                <div class="contact-info-content"></div>
+                                <div class="contact-info-content">linkedin.com/in/john-frederick-gelay-19243b346</div>
                             </div>
                         </div>
                         
@@ -357,17 +361,34 @@
                                 <div class="contact-info-title">Personal:</div>
                                 <div class="contact-info-content">+63 966 174 8034</div>
                             </div>
-                            
-                          
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Admin Modal -->
+        <div id="adminModal" class="admin-modal">
+            <div class="admin-modal-content">
+                <span class="close-modal" id="closeModal">&times;</span>
+                <div class="admin-panel">
+                    <h2>Upload CV</h2>
+                    <div class="form-group">
+                        <label for="pdfFileInput">Select PDF File (max 750KB):</label>
+                        <input type="file" id="pdfFileInput" accept="application/pdf">
+                    </div>
+                    <button onclick="uploadCVToFirestore()">Upload CV to Firestore</button>
+                    <div id="uploadStatus" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/theme.js"></script>
+
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/cv-upload.js"></script>
+    <script src="assets/js/contact-form.js"></script>
+    <script src="assets/js/cv-download.js"></script>
 </body>
 </html>
