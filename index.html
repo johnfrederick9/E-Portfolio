@@ -80,7 +80,7 @@
                     <img src="assets/img/profile.jpg" alt="John Frederick Gelay">
                 </div>
                 <h1 class="profile-name">John Frederick Gelay</h1>
-                <!-- <p class="profile-title">Aspiring Developer</p> -->
+                <p class="profile-title">Software Developer</p>
                 
                 <!-- Social Icons -->
                 <div class="social-icons">
@@ -116,51 +116,60 @@
                 
                 <!-- Languages Section -->
                 <div class="languages-section">
-                    <h3 class="section-subtitle">Languages</h3>
-                    <div class="language-item">
-                        <div class="language-info">
-                            <span>Tagalog</span>
-                        </div>
-                    </div>
-                    
-                    <div class="language-item">
-                        <div class="language-info">
-                            <span>English</span>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- Skills Section -->
                 <div class="skills-section">
-                    <h3 class="section-subtitle">Skills</h3>
+                    <h3 class="section-subtitle">Technical Skills:</h3>
                     
                     <div class="skill-item">
                         <div class="skill-info">
-                            <span><h4>Proficient in programming languages such as Python, JavaScript, 
-                            Java, and PHP, with experience in frameworks and libraries 
-                            including Django and ASP.NET. Skilled in web development, 
-                            utilizing HTML, CSS, and responsive design to create user-friendly 
-                            interfaces. Experienced in database management using SQLite and 
-                            MySQL. Possess strong soft skills in team collaboration, 
-                            adaptability, and active listening, ensuring effective 
-                            communication and seamless integration into dynamic work 
-                            environments.</h4></span>
+                            <ul class="extra-skills-list">
+                                <li class="extra-skill-item">
+                                    <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span class="extra-skill-text">HTML, CSS, JavaScript</span>
+                                </li>
+                                
+                                <li class="extra-skill-item">
+                                    <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span class="extra-skill-text">C# / .NET</span>
+                                </li>
+                                <li class="extra-skill-item">
+                                    <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span class="extra-skill-text">Git, GitHub</span>
+                                </li>
+                                <li class="extra-skill-item">
+                                    <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span class="extra-skill-text">Agile & Scrum Methodology</span>
+                                </li>
+                                <li class="extra-skill-item">
+                                    <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                                    <span class="extra-skill-text">API Integration</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Extra Skills Section -->
                 <div class="extra-skills-section">
-                    <h3 class="section-subtitle">Extra Skills</h3>
-                    
+                    <h3 class="section-subtitle">Soft Skills:</h3>
                     <ul class="extra-skills-list">
-                        <!-- <li class="extra-skill-item">
-                            <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
-                            <span class="extra-skill-text">Bootstrap, Materialize</span>
-                        </li> -->
                         <li class="extra-skill-item">
                             <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
-                            <span class="extra-skill-text">Basic GIT Knowledge</span>
+                            <span class="extra-skill-text">Team Collaboration</span>
+                        </li>
+                        <li class="extra-skill-item">
+                            <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="extra-skill-text">Adaptability</span>
+                        </li>
+                        <li class="extra-skill-item">
+                            <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="extra-skill-text">Time Management</span>
+                        </li>
+                        <li class="extra-skill-item">
+                            <span class="extra-skill-icon"><i class="fas fa-check-circle"></i></span>
+                            <span class="extra-skill-text">Committed</span>
                         </li>
                     </ul>
                 </div>
@@ -184,16 +193,16 @@
         
         <!-- Content -->
         <h1><span class="span">I'm John Frederick Gelay</span></h1>
-        <h2><span class="highlight">Front-End</span> <span class="regular">Developer</span></h2>
+        <h2><span class="highlight">Software</span> <span class="regular">Developer</span></h2>
         
         <p class="lorem-text">
-           Committed and detail-oriented Developer with a strong foundation in creating responsive, user-centric web interfaces. Skilled in modern web technologies and committed to building clean, efficient, and accessible user experiences. Dedicated to continuous learning and contributing to impactful digital solutions.
+          A highly motivated graduating student with hands-on training in mobile and web development. Experienced in working with development pipelines, collaborative sprints, user story implementation, QA coordination, and full-cycle software development. Demonstrates strong teamwork, adaptability, and problem-solving skills. Eager to contribute to a forward-thinking tech team and grow in the fields of DevOps, web development, or software engineering.
         </p>
         
         <div class="buttons">
             <a href="#contact" class="btn btn-primary">Contact Me →</a>
             <a href="#" id="downloadCV" class="btn btn-secondary">
-                DOWNLOAD CV
+                DOWNLOAD RESUME
                 <svg class="download-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                     <polyline points="7 10 12 15 17 10"></polyline>
@@ -383,12 +392,12 @@
             <div class="admin-modal-content">
                 <span class="close-modal" id="closeModal">&times;</span>
                 <div class="admin-panel">
-                    <h2>Upload CV</h2>
+                    <h2>Upload Resume</h2>
                     <div class="form-group">
                         <label for="pdfFileInput">Select PDF File (max 750KB):</label>
                         <input type="file" id="pdfFileInput" accept="application/pdf">
                     </div>
-                    <button onclick="uploadCVToFirestore()">Upload CV to Firestore</button>
+                    <button onclick="uploadCVToFirestore()">Upload Resume to Firestore</button>
                     <div id="uploadStatus" style="margin-top: 15px;"></div>
                 </div>
             </div>
