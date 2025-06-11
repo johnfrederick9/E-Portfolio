@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Create download link
                         const link = document.createElement('a');
                         link.href = URL.createObjectURL(pdfBlob);
-                        link.download = 'John_Frederick_Gelay_CV.pdf';
+                        link.download = 'John_Frederick_Gelay_Resume.pdf';
                         
                         // Trigger download
                         document.body.appendChild(link);
