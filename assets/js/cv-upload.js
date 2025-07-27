@@ -81,11 +81,11 @@ async function uploadCVToFirestore() {
             uploadDate: firebase.firestore.FieldValue.serverTimestamp()
         });
         
-        uploadStatus.textContent = 'CV uploaded successfully!';
+        uploadStatus.textContent = 'Resume uploaded successfully!';
         uploadStatus.style.color = 'green';
     } catch (error) {
-        console.error('Error uploading CV:', error);
-        uploadStatus.textContent = 'Failed to upload CV: ' + error.message;
+        console.error('Error uploading Resume:', error);
+        uploadStatus.textContent = 'Failed to upload Resume: ' + error.message;
         uploadStatus.style.color = 'red';
     }
 }
