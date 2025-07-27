@@ -49,14 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         // Clean up the URL object
                         setTimeout(() => URL.revokeObjectURL(link.href), 100);
                     } else {
-                        alert("CV not yet uploaded. Please upload your CV through the admin panel first.");
+                        alert("Resume not yet uploaded. Please upload your Resume through the admin panel first.");
                     }
                 })
                 .catch((error) => {
                     // Reset button text
                     this.innerHTML = originalText;
                     
-                    console.error("Error getting CV document:", error);
+                    console.error("Error getting Resume document:", error);
                     alert("Resume download failed. Please try again later.");
                 });
         });
